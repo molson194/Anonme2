@@ -25,49 +25,13 @@
 			],
 			"type": "process",
 			"dependsOn": "clean (functions)",
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			},
 			"problemMatcher": "$msCompile",
 			"options": {
 				"cwd": "${workspaceFolder}/api"
 			}
 		},
 		{
-			"label": "clean release (functions)",
-			"command": "dotnet",
-			"args": [
-				"clean",
-				"--configuration",
-				"Release",
-				"/property:GenerateFullPaths=true",
-				"/consoleloggerparameters:NoSummary"
-			],
-			"type": "process",
-			"problemMatcher": "$msCompile",
-			"options": {
-				"cwd": "${workspaceFolder}/api"
-			}
-		},
-		{
-			"label": "publish (functions)",
-			"command": "dotnet",
-			"args": [
-				"publish",
-				"--configuration",
-				"Release",
-				"/property:GenerateFullPaths=true",
-				"/consoleloggerparameters:NoSummary"
-			],
-			"type": "process",
-			"dependsOn": "clean release (functions)",
-			"problemMatcher": "$msCompile",
-			"options": {
-				"cwd": "${workspaceFolder}/api"
-			}
-		},
-		{
+			"label": "start (func)",
 			"type": "func",
 			"dependsOn": "build (functions)",
 			"options": {
@@ -76,6 +40,26 @@
 			"command": "host start",
 			"isBackground": true,
 			"problemMatcher": "$func-dotnet-watch"
+		},
+		{
+			"label": "build (app)",
+			"command": "npm run build",
+			"type": "process",
+			"options": {
+				"cwd": "${workspaceFolder}/app"
+			},
+			"problemMatcher": "$eslint-compact"
+		},
+		{
+			"label": "start (app)",
+			"command": "npm start",
+			"type": "process",
+			"options": {
+				"cwd": "${workspaceFolder}/app"
+			},
+			"problemMatcher": [
+				"$eslint-compact"
+			]
 		}
 	]
 }
