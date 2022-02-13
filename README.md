@@ -7,13 +7,15 @@ Links
 * https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events
 * https://github.com/tyrion/sse-websockets-demo/blob/master/server.py
 * https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=react
+* https://docs.microsoft.com/en-us/azure/static-web-apps/build-configuration?tabs=github-actions
 
 Tasks
+0. Change master to main branch
 1. Create static web app
 2. Set up folder structure
 3. Set up react with local hot change
 4. Set up functions with local hot change
-5. Get local testing working
+5. Get local testing working (.vscode stuff)
 6. Progressive webapp start
 7. Basic server sent events
 9. Basic messaging
